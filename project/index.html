@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.3/css/fontawesome.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Raleway:400,700" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="slick/slick.css"/>
+    <link rel="stylesheet" type="text/css" href="slick/slick-theme.css"/>
+    <link rel="stylesheet" href="vendor/animate_it/animate.css">
+    <link rel="stylesheet" href="vendor/wowjs/css/libs/animate.css">
+    <link rel="icon" href="img/logo-small.png">
+</head>
+<body>
+
+  <div class="loader-container d-flex justify-content-center align-items-center w-100 vh-100 bg-white position-fixed" style="z-index: 2000;">
+    <div class="loader">Loading...</div>
+  </div>
+  
+  <style>
+    .loader-container{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100%;
+      width: 100%;
+      position: fixed;
+      z-index: 2000;
+    }
+    .loader {
+    color: black;
+    font-size: 20px;
+    margin: 100px auto;
+    width: 1em;
+    height: 1em;
+    border-radius: 50%;
+    position: relative;
+    text-indent: -9999em;
+    -webkit-animation: load4 1.3s infinite linear;
+    animation: load4 1.3s infinite linear;
+    -webkit-transform: translateZ(0);
+    -ms-transform: translateZ(0);
+    transform: translateZ(0);
+  }
+  @-webkit-keyframes load4 {
+    0%,
+    100% {
+      box-shadow: 0 -3em 0 0.2em, 2em -2em 0 0em, 3em 0 0 -1em, 2em 2em 0 -1em, 0 3em 0 -1em, -2em 2em 0 -1em, -3em 0 0 -1em, -2em -2em 0 0;
+    }
+    12.5% {
+      box-shadow: 0 -3em 0 0, 2em -2em 0 0.2em, 3em 0 0 0, 2em 2em 0 -1em, 0 3em 0 -1em, -2em 2em 0 -1em, -3em 0 0 -1em, -2em -2em 0 -1em;
+    }
+    25% {
+      box-shadow: 0 -3em 0 -0.5em, 2em -2em 0 0, 3em 0 0 0.2em, 2em 2em 0 0, 0 3em 0 -1em, -2em 2em 0 -1em, -3em 0 0 -1em, -2em -2em 0 -1em;
+    }
+    37.5% {
+      box-shadow: 0 -3em 0 -1em, 2em -2em 0 -1em, 3em 0em 0 0, 2em 2em 0 0.2em, 0 3em 0 0em, -2em 2em 0 -1em, -3em 0em 0 -1em, -2em -2em 0 -1em;
+    }
+    50% {
+      box-shadow: 0 -3em 0 -1em, 2em -2em 0 -1em, 3em 0 0 -1em, 2em 2em 0 0em, 0 3em 0 0.2em, -2em 2em 0 0, -3em 0em 0 -1em, -2em -2em 0 -1em;
+    }
+    62.5% {
+      box-shadow: 0 -3em 0 -1em, 2em -2em 0 -1em, 3em 0 0 -1em, 2em 2em 0 -1em, 0 3em 0 0, -2em 2em 0 0.2em, -3em 0 0 0, -2em -2em 0 -1em;
+    }
+    75% {
+      box-shadow: 0em -3em 0 -1em, 2em -2em 0 -1em, 3em 0em 0 -1em, 2em 2em 0 -1em, 0 3em 0 -1em, -2em 2em 0 0, -3em 0em 0 0.2em, -2em -2em 0 0;
+    }
+    87.5% {
+      box-shadow: 0em -3em 0 0, 2em -2em 0 -1em, 3em 0 0 -1em, 2em 2em 0 -1em, 0 3em 0 -1em, -2em 2em 0 0, -3em 0em 0 0, -2em -2em 0 0.2em;
+    }
+  }
+  @keyframes load4 {
+    0%,
+    100% {
+      box-shadow: 0 -3em 0 0.2em, 2em -2em 0 0em, 3em 0 0 -1em, 2em 2em 0 -1em, 0 3em 0 -1em, -2em 2em 0 -1em, -3em 0 0 -1em, -2em -2em 0 0;
+    }
+    12.5% {
+      box-shadow: 0 -3em 0 0, 2em -2em 0 0.2em, 3em 0 0 0, 2em 2em 0 -1em, 0 3em 0 -1em, -2em 2em 0 -1em, -3em 0 0 -1em, -2em -2em 0 -1em;
+    }
+    25% {
+      box-shadow: 0 -3em 0 -0.5em, 2em -2em 0 0, 3em 0 0 0.2em, 2em 2em 0 0, 0 3em 0 -1em, -2em 2em 0 -1em, -3em 0 0 -1em, -2em -2em 0 -1em;
+    }
+    37.5% {
+      box-shadow: 0 -3em 0 -1em, 2em -2em 0 -1em, 3em 0em 0 0, 2em 2em 0 0.2em, 0 3em 0 0em, -2em 2em 0 -1em, -3em 0em 0 -1em, -2em -2em 0 -1em;
+    }
+    50% {
+      box-shadow: 0 -3em 0 -1em, 2em -2em 0 -1em, 3em 0 0 -1em, 2em 2em 0 0em, 0 3em 0 0.2em, -2em 2em 0 0, -3em 0em 0 -1em, -2em -2em 0 -1em;
+    }
+    62.5% {
+      box-shadow: 0 -3em 0 -1em, 2em -2em 0 -1em, 3em 0 0 -1em, 2em 2em 0 -1em, 0 3em 0 0, -2em 2em 0 0.2em, -3em 0 0 0, -2em -2em 0 -1em;
+    }
+    75% {
+      box-shadow: 0em -3em 0 -1em, 2em -2em 0 -1em, 3em 0em 0 -1em, 2em 2em 0 -1em, 0 3em 0 -1em, -2em 2em 0 0, -3em 0em 0 0.2em, -2em -2em 0 0;
+    }
+    87.5% {
+      box-shadow: 0em -3em 0 0, 2em -2em 0 -1em, 3em 0 0 -1em, 2em 2em 0 -1em, 0 3em 0 -1em, -2em 2em 0 0, -3em 0em 0 0, -2em -2em 0 0.2em;
+    }
+  }
+  </style>
+
+    <nav class="navbar navbar-expand-md shadow ">
+                        
+        <a class="navbar-brand" href="#" >
+            <img src="img/logo-long.svg" class="nav-logo" alt="">
+        </a>
+        <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar">
+          <span class="navbar-toggler-icon"><i class="fas fa-bars"></i></span>
+      </button>
+      <div class="navbar-collapse collapse d-grid-md justify-content-md-end" id="navbar">
+        <ul class="navbar-nav">
+            <li class="nav-item"><a href="#main" class="nav-link text-uppercase" style="color: white;" >Home</a></li>
+            <li class="nav-item"><a href="#price" class="nav-link text-uppercase" style="color: white;">pricing</a></li>
+            <li class="nav-item"><a href="#product" class="nav-link text-uppercase"  style="color: white;">service</a></li>
+            <li class="nav-item"><a href="#about" class="nav-link text-uppercase" style="color: white;">About</a></li>
+            <li class="nav-item"><a href="#contact" class="nav-link text-uppercase" style="color: white;">Contact</a></li>
+        </ul>
+    </div>
+      
+    </nav>
+
+    
+      <!-- social-media -->
+    <section class="home" id="main">
+      <div class="container" style="margin-bottom: 40px;">
+        <div class="row">
+          <div class="col-md-6">
+            <div class="home-left-site mt-5 animate__animated animate__fadeInDownBig animation-delay-1">
+              <h3 class="mb-3"> Social Media</h3>
+              <h1 style="font-weight: 600;">FOR BUSINESS</h1>
+              <p class="text-uppercase text-black-50 mt-3"> Lorem ipsum dolor sit amet consectetur
+                                    <br>
+                                 Nihil enim accusamus maiores maxime no</p>
+              <div class="text-box">
+              <a href="#" class="btn btn-white btn-animate" style="box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);">GET A FREE ADUIT</a>
+              </div>
+              </div>
+          </div>
+          <div class="col-md-6">
+            <div class="">
+              <img src="img/businessimg.svg" alt="" class="home-img animate__animated animate__fadeInDownBig animation-delay-2">
+            </div>
+          </div>  
+    </div>
+      </div>
+      <img src="img/wave1.png" class="home-wave-img" alt="">
+    </section>
+    <div class="scrol-to-next mt-3  ">
+      <i class="fa fa-arrow-down shadow animate__animated animate__bounce  " style="animation-iteration-count: infinite;" aria-hidden="true"></i>
+    </div>
+  
+    <!-- about-section -->
+    <section class="about" id="about">
+      <div class="container" style="margin-top:80px;">
+        <div class="row">
+          <div class="col-md-6">
+            <img src="img/content-2.svg" class="about-img wow fadeInRight" data-wow-delay="0.5s" alt="">
+          </div>
+          <div class="col-md-6">
+            <div class="services-right-site wow fadeInLeft" data-wow-delay="0.5s">
+              <span class="" style="color: blueviolet;">ABOUT</span>
+              <h2 class="mt-2" style="font-weight: bolder;" >Who We Are</h2>
+              <p class="mt-3">Lorem ipsum dol iusto beatae magnam nesciunt rem similique molestiae! Suscipit, reiciendis
+              am nesciunt rem similique molestiae! Suscipit, reiciam nesciunt rem similique molestiae! Suscipit, reiciam nesciunt rem similique molestiae! Suscipit, reiciam nesciunt rem similique molestiae! Suscipit, reici!
+              </p>
+              <div class="text-box">
+              <button class="btn btn-white btn-animate" style=" padding:7px 30px; box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); border-radius: 50rem;">See more</button>
+              </div>
+              </div>
+          </div>
+        </div>
+      </div>
+    </section> 
+  
+    <!-- services-section -->
+    <section class="services" id="product">
+      <div class="container wow fadeInLeft" data-wow-delay="0.9s">
+        <div class="row py-5 ">
+          <div class="mb-4 " >
+            <span class="" style="color: blueviolet; ">OUR SERVICES</span>
+            <h2 style="margin:10px 0; font-weight:700; font-style:unset;">What We Offer</h2>
+          </div>
+          <div class="col-12 col-md-6 col-xl-4">
+          <div class="card shadow" style="border-radius: 30px;margin-bottom: 30px;">
+            <div class="card-body ">
+              <img src="./img/icon-1.svg" class="img-icon" alt="">
+              <br>
+              <span class="" style="color: rgb(64, 5, 119); display: flex; justify-content: center; margin-top: 20px;  margin-bottom:10px;">SOCIAL MEDIA MANAGEMENT</span>
+              <p>Lorem ipsum doorum minus ipsum dolor sit amet contem ducimus excepturi quaerat dolore dolorum minus.</p>
+              <div class="text-box d-flex justify-content-end">
+                <button class="btn btn-white btn-animate" style="box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); border-radius: 50rem;">See more</button>
+                </div>
+            </div>    
+          </div>
+          </div>
+          
+          <div class="col-12 col-md-6 col-xl-4">
+          <div class="card shadow" style="border-radius: 30px;margin-bottom: 30px;">
+            <div class="card-body">
+              <img src="./img/icon-3.svg" class="img-icon" alt="">
+              <br>
+              <span class="" style="color: rgb(64, 5, 119); display: flex; justify-content: center; margin-top: 20px; margin-bottom:10px;">SOCIAL MEDIA MANAGEMENT</span>
+              <p>Lorem ipsum doorum minus ipsum dolor sit amet contem ducimus excepturi quaerat dolore dolorum minus.</p>
+              <div class="text-box d-flex justify-content-end">
+                <button class="btn btn-white btn-animate" style="box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); border-radius: 50rem;">See more</button>
+                </div>
+            </div>    
+          </div>
+          </div>
+          <div class="col-12 col-md-6 col-xl-4">
+          <div class="card shadow" style="border-radius: 30px;margin-bottom: 30px;">
+            <div class="card-body">
+              <img src="./img/icon-2.svg" class="img-icon" alt="">
+              <br>
+              <span class="" style="color: rgb(64, 5, 119); display: flex; justify-content: center; margin-top: 20px; margin-bottom:10px;">SOCIAL MEDIA MANAGEMENT</span>
+              <p>Lorem ipsum doorum minus ipsum dolor sit amet contem ducimus excepturi quaerat dolore dolorum minus.</p>
+              <div class="text-box d-flex justify-content-end">
+                <button class="btn btn-white btn-animate" style="box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); border-radius: 50rem;">See more</button>
+                </div>
+            </div>    
+          </div>
+          </div>
+          <div class="col-12 col-md-6 col-xl-4">
+            <div class="card shadow" style="border-radius: 30px;margin-bottom: 30px;">
+              <div class="card-body">
+                <img src="./img/icon-4.svg" class="img-icon" alt="">
+                <br>
+                <span class="" style="color: rgb(64, 5, 119); display: flex; justify-content: center; margin-top: 20px; margin-bottom:10px;">SOCIAL MEDIA MANAGEMENT</span>
+                <p>Lorem ipsum doorum minus ipsum dolor sit amet contem ducimus excepturi quaerat dolore dolorum minus.</p>
+                <div class="text-box d-flex justify-content-end">
+                  <button class="btn btn-white btn-animate" style="box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); border-radius: 50rem;">See more</button>
+                  </div>
+              </div>    
+            </div>
+            </div>
+            <div class="col-12 col-md-6 col-xl-4">
+              <div class="card shadow" style="border-radius: 30px;margin-bottom: 30px;">
+                <div class="card-body">
+                  <img src="./img/icon-5.svg" class="img-icon" alt="">
+                  <br>
+                  <span class="" style="color: rgb(64, 5, 119); display: flex; justify-content: center; margin-top: 20px; margin-bottom:10px;">SOCIAL MEDIA MANAGEMENT</span>
+                  <p>Lorem ipsum doorum minus ipsum dolor sit amet contem ducimus excepturi quaerat dolore dolorum minus.</p>
+                  <div class="text-box d-flex justify-content-end">
+                    <button class="btn btn-white btn-animate" style="box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); border-radius: 50rem;">See more</button>
+                    </div>
+                </div>    
+              </div>
+              </div>
+              <div class="col-12 col-md-6 col-xl-4">
+                <div class="card shadow" style="border-radius: 30px;margin-bottom: 30px;">
+                  <div class="card-body">
+                    <img src="./img/icon-6.svg" class="img-icon" alt="">
+                    <br>
+                    <span class="" style="color: rgb(64, 5, 119); display: flex; justify-content: center; margin-top: 20px; margin-bottom:10px;">CONTENT MARKETING SERVICES</span>
+                    <p>Lorem ipsum doorum minus ipsum dolor sit amet contem ducimus excepturi quaerat dolore dolorum minus.</p>
+                    <div class="text-box d-flex justify-content-end">
+                      <button class="btn btn-white btn-animate" style="box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); border-radius: 50rem;">See more</button>
+                      </div>
+                  </div>    
+                </div>
+                </div>
+              
+          
+          </div>
+      </div>
+    </section>
+  
+    <!-- pricing-section -->
+    <section id="price" style="background-color: #dcdcdce8;">
+      <div class="container " >
+      <div class=" py-4">
+            <div class="d-grid justify-content-center mb-4 wow fadeInDown"data-wow-delay="0.8s" >
+              <p style="color: blueviolet;">Our Pricing</p>
+              <h3 class="mb-1">Our product  marketing</h3>
+            </div>
+          <div class="pricing-slide " >
+              <div class="col-sm-12 col-md-4">
+                <div class="card shadow wow fadeInLeftBig" data-wow-delay="0.5s" style="border-radius: 30px; padding: 30px 20px; margin: 20px 12px;" >
+                  <div class="card-body wow fadeInLeftBig" style="text-align: center;">
+                    <h4 class="my-4 font-weight-bolder text-primary">Gold Package</h4>
+                    <p>Lorem, ipsum dolor si omnis voluptaremque sed quos. Nemo dolorum beatae modi!</p>
+                    <h4 class="my-4" style="color: blue; ">$ 150 </h4>
+                    <div class="text-box d-flex justify-content-center">
+                        <button class="btn btn-white btn-animate" style="box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); border-radius: 50rem; background-color: black !important; padding: 5px 30px  ;">See Price</button>
+                    </div>
+                </div>
+              </div>
+              </div>
+            <div class="col-sm-12 col-md-4">
+              <div class="card shadow wow fadeInDownBig" data-wow-delay="0.5s" style="border-radius: 30px; padding: 30px 20px; margin: 20px 12px;" >
+                <div class="card-body " style="text-align: center;">
+                  <h4 class="my-4 font-weight-bolder text-primary">Silver Package</h4>
+                  <p>Lorem, ipsum dolor si omnis voluptaremque sed quos. Nemo dolorum beatae modi!</p>
+                  <h4 class="my-4" style="color: blue; ">$ 150 </h4>
+                   <div class="text-box d-flex justify-content-center">
+                      <button class="btn btn-white btn-animate" style="box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); border-radius: 50rem; background-color: black !important; padding: 5px 30px  ;">See Price</button>
+                   </div>
+              </div>
+            </div>
+            </div>
+            <div class="col-sm-12 col-md-4">
+              <div class="card shadow wow fadeInRightBig" data-wow-delay="0.5s" style="border-radius: 30px; padding: 30px 20px; margin: 20px 12px;" >
+                <div class="card-body " style="text-align: center;">
+                  <h4 class="my-4 font-weight-bolder text-primary">Platinum </h4>
+                  <p>Lorem, ipsum dolor si omnis voluptaremque sed quos. Nemo dolorum beatae modi!</p>
+                  <h4 class="my-4" style="color: blue; ">$ 150 </h4>
+                   <div class="text-box d-flex justify-content-center">
+                      <button class="btn btn-white btn-animate" style="box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); border-radius: 50rem; background-color: black !important; padding: 5px 30px  ;">See Price</button>
+                   </div>
+              </div>
+            </div>
+            </div>
+  
+            <div class="col-12 col-md-4">
+              <div class="card shadow" style="border-radius: 30px; padding: 30px 20px; margin: 20px 12px;" >
+                <div class="card-body " style="text-align: center;">
+                  <h4 class="my-4 font-weight-bolder text-primary">Gold Package</h4>
+                  <p>Lorem, ipsum dolor si omnis voluptaremque sed quos. Nemo dolorum beatae modi!</p>
+                  <h4 class="my-4" style="color: blue; ">$ 150 </h4>
+                   <div class="text-box d-flex justify-content-center">
+                      <button class="btn btn-white btn-animate" style="box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); border-radius: 50rem; background-color: black !important; padding: 5px 30px  ;">See Price</button>
+                   </div>
+              </div>
+            </div>
+            </div>
+            <div class="col-12 col-md-4">
+              <div class="card shadow" style="border-radius: 30px; padding: 30px 20px; margin: 20px 12px;" >
+                <div class="card-body " style="text-align: center;">
+                  <h4 class="my-4 font-weight-bolder text-primary">Silver Package</h4>
+                  <p>Lorem, ipsum dolor si omnis voluptaremque sed quos. Nemo dolorum beatae modi!</p>
+                  <h4 class="my-4" style="color: blue; ">$ 150 </h4>
+                   <div class="text-box d-flex justify-content-center">
+                      <button class="btn btn-white btn-animate" style="box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); border-radius: 50rem; background-color: black !important; padding: 5px 30px  ;">See Price</button>
+                   </div>
+              </div>
+            </div>
+            </div>
+            <div class="col-12 col-md-4">
+              <div class="card shadow" style="border-radius: 30px; padding: 30px 20px; margin: 20px 12px;" >
+                <div class="card-body " style="text-align: center;">
+                  <h4 class="my-4 font-weight-bolder text-primary">Gold Package</h4>
+                  <p>Lorem, ipsum dolor si omnis voluptaremque sed quos. Nemo dolorum beatae modi!</p>
+                  <h4 class="my-4" style="color: blue; ">$ 150 </h4>
+                   <div class="text-box d-flex justify-content-center">
+                      <button class="btn btn-white btn-animate" style="box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); border-radius: 50rem; background-color: black !important; padding: 5px 30px  ;">See Price</button>
+                   </div>
+              </div>
+            </div>
+            </div>
+  
+            
+            
+          </div>
+          
+      </div>
+      </div>
+    </section>
+    
+   <!-- contact-us-section -->
+   <section id="contact">
+             
+    <div class="container">
+      <div class="row py-5 ">
+        <div class="col-12">
+          <div class="d-grid justify-content-center align-items-center mb-5" >
+            <p style="text-align: center; color: blueviolet;">Contact Us</p>
+            <h3 style="font-weight: bolder;">Get In Touch With Us</h3>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <form action="#" class="">
+            <div class="form-group mb-3">
+              <input type="text" class="form-control" placeholder="Name">
+            </div>
+            <div class="form-group mb-3">
+              <input type="text" class="form-control" placeholder="Email">
+            </div>
+            <div class="form-group mb-3">
+              <textarea type="text" class="form-control" rows="5" placeholder="Message"></textarea>
+            </div>
+            <div class="" >
+              <button class="btn btn-white btn-animate send-message" style="box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); border-radius: 50rem; ">Send Message</button>
+              </div>
+            
+              
+          </form>
+        </div>
+        <div class="col-md-6 map">
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d60843.062963174765!2d96.13614087472668!3d16.860753443910866!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x30c193527b860fb7%3A0x43f5722581c99cb1!2sYankin%20Center!5e0!3m2!1sen!2smm!4v1626603208163!5m2!1sen!2smm" width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+        </div>
+      </div>
+    </div>
+  
+  </section> 
+  
+  <!-- footer-section -->
+  <section class="footer text-white">
+    <img src="img/wave2.png" class="footer-img" alt="">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6 col-xl-3 footer-box">
+          <p>STAY IN TOUCH</p>
+          <h2 style="font-weight: bold;">MARKETING</h2>
+          <div class="icon" style="padding: 0 10px;">
+          <a href="https://www.facebook.com/ismar.begic.12" target="_blank" style="padding-right: 7px;"><i class="fab fa-facebook-square"></i></a>  
+          <a href="https://instagram.com/begaa_i/" target="_blank" style="padding-right: 7px;"><i class="fab fa-instagram"></i></a>  
+          <a href="https://github.com/Bego96" target="_blank"><i class="fab fa-github"></i></a>
+          <a href="https://twitter.com"></a>
+  
+            
+          </div>
+        </div>
+        <div class="col-md-6 col-xl-3 footer-box text-white">
+          <h4 style="font-weight: 700;"><b>CONTACT US</b></h4>
+          <p>  MMS.IT Company</p>
+          <p> <i class="fa fa-phone"></i> 09886375892</p>
+          <p> <i class="fa fa-envelope-open"></i> limit8382@gmail.com</p>
+        </div>
+        <div class=" col-md-6 col-xl-3 footer-box hour text-white">
+          <h4 style="font-weight: 700;">HOURS </h4>
+          <div style="display: flex;">
+            <p>Monday</p>
+            <p style="margin-left: 45px;" >:9:00AM to 18:00PM</p>
+          </div>
+          <div style="display: flex;">
+            <p>Tuesday</p>
+            <p style="margin-left: 43px;" >:9:00AM to 18:00PM</p>
+          </div>
+          <div style="display: flex;">
+            <p>Wednesday</p>
+            <p style="margin-left: 20px;" >:9:00AM to 18:00PM</p>
+          </div>
+          <div style="display: flex;">
+            <p>Thursday</p>
+            <p style="margin-left: 35px;" >:9:00AM to 18:00PM</p>
+          </div>
+          <div style="display: flex;">
+            <p>Friday</p>
+            <p style="margin-left: 55px;" >:9:00AM to 18:00PM</p>
+          </div>
+        </div>
+        <div class=" col-md-6 col-xl-3 footer-box qu-link">
+          <div class="links">
+            <h4 style="font-weight: 700; color: white;">QUICK LINKS </h4>
+            
+            <ul class="footer-ul" style="list-style-type: none;">
+              <li class="">
+                <a class="nav-link text-uppercase active" aria-current="page"  href="#main" style="color: white; padding: 0;" >Home</a>
+              </li>
+             
+              <li class="">
+                <a class="nav-link text-uppercase active" aria-current="page" href="#price" style="color: white; padding: 0;">Pricing</a>
+              </li>
+              <li class="">
+                <a class="nav-link text-uppercase active" aria-current="page" href="#product" style="color: white; padding: 0;">Services</a>
+              </li>
+              <li class="">
+                <a class="nav-link text-uppercase active" aria-current="page" href="#contact" style="color: white; padding: 0;">Contact</a>
+              </li>
+              <li class="">
+                <a class="nav-link text-uppercase active" aria-current="page" href="#about" style="color: white; padding: 0;">About</a>
+              </li>
+              
+            </ul>
+          </div>
+        </div>
+        
+          
+    </div>
+  </section> 
+      
+ 
+
+
+  <script src="slick/jquery-3.2.1.min.js"></script>
+  <script src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
+  <script src="js/bootstrap.js"></script>
+  <script src="slick/slick.min.js"></script>
+  <script src="vendor/wowjs/dist/wow.min.js"></script>
+  
+  
+  <script>
+   new WOW().init(); 
+    $('.pricing-slide').slick({
+    dots: true,
+    infinite: false,
+    speed: 300,
+    slidesToShow: 3,    
+    slidesToScroll: 3,
+    responsive: [
+      {
+        breakpoint: 1400,
+        settings: {
+          slidesToShow: 3,
+          slidesToScroll: 3,
+          infinite: true,
+          dots: true
+        }
+      },
+      {
+        breakpoint: 800,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 2
+        }
+      },
+      {
+        breakpoint: 480,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1
+        }
+      }
+    ]
+  });
+  </script>
+  
+  <script src="../project/js/app.js"></script>
+</body>
+</html>
